@@ -1,17 +1,17 @@
 require('dotenv').config()
 
 const Log = async (req,res,next)=>{
-    const {stack,level,package,message} = req.body()
-    const resp = await fetch(ProcessingInstruction.env.API_LOG,{
+    const {stack,level,package1,message} = req.body()
+    const resp = await fetch(process.env.API_LOG,{
         method:'POST',
         header:{
-            'Authorization':ProcessingInstruction.env.TOKEN,
+            'Authorization':process.env.TOKEN,
             'Content-Type':'application/json'
         },
         body:{
             "stack":stack,
             "level":level,
-            "package":package,
+            "package":package1,
             "message":message
         }
     })
