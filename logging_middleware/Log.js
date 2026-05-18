@@ -16,6 +16,6 @@ const Log = async (req,res,next)=>{
         }
     })
     const data = await resp.json()
-    console.log(data.logID+" "+data.message)
+    console.log(data.logID+" Log : "+data.message)
     next()
 }
